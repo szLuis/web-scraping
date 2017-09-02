@@ -1,0 +1,230 @@
+#imagen-sorteo {
+    width: auto;
+    float: none;    
+    background: #ccc url(https://resultadosbonoloto.com/images/logo-bonoloto.png) no-repeat;
+    /* background-color: #ccc; */
+    max-height: 92px;
+    min-height: 92px;
+    margin-top: 0px;
+    text-align: center;
+    padding-left: 96px;
+}
+
+#imagen-sorteo h3 {
+   font-size: 24px;
+   margin-top: 0;
+   
+   padding-top: 20px;
+   margin-bottom: -5px;
+}
+
+#imagen-sorteo p {
+   font-size: 17px;
+   text-align: center;
+}
+
+.complemen {
+    background: none; 
+    margin-top: -10px; 
+    margin-right: 55px;
+}
+
+.reintegro {
+    background: none;  
+    margin-top: -10px; 
+    margin-right: 12px; 
+    padding-left: 35px;
+}
+
+#content-left-1 {
+    float: left;
+    margin-bottom: 10px;
+    width: 438px; /* 418 */
+    background-repeat: repeat-x;
+    height: 221px; /* 191 */
+    /* border-top: 3px solid #FAC907; */
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #007CFF;
+    -webkit-box-shadow: 0px 5px 8px 0px rgba(50,50,50,0.62);
+    -moz-box-shadow: 0px 5px 8px 0px rgba(50,50,50,0.62);
+    box-shadow: 0px 5px 8px 0px rgba(50,50,50,0.62);
+}
+
+/* #content-left-1 p {
+	text-align: justify; 
+	padding-left: 25px; 
+	padding-right: 5px; 
+	line-height: 20px;
+} */
+
+.loto-ball-g span {
+    display: block;
+    line-height: 46px;
+    text-align: center;
+    font-family: impact;
+    font-size: 20px;
+    color: #fff;
+
+    
+}
+
+#ganadores-ball {
+    margin-top: -5px;
+    height: 110px;
+}
+
+div {
+    display: block;
+}
+    #ganadores-ball>ul.loto-ballgs {
+    margin: 0px;
+    padding: 0px;
+    margin: 0px 30px 0px;
+    height: 50px;
+}    
+#ganadores-ball>ul.loto-ballgs>li {
+    margin: 0px;
+    padding: 0px;
+    margin-left: 15px;
+    line-height: 70px;
+    display: inline;
+    float: left;
+    position: relative;
+    width: 45px;
+    height: 50px;
+    background: url(https://resultadosbonoloto.com/images/s-ball.png) no-repeat;
+}
+
+
+user agent stylesheet
+ul, menu, dir {
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+}
+.loto-ball-g span {
+    display: block;
+    line-height: 46px;
+    text-align: center;
+    font-family: impact;
+    font-size: 20px;
+    color: #fff;
+}
+
+
+/* media queryyyyyyyyyyyyyyyyyy */
+
+@media (max-width: 468px) {
+/* #imagen-sorteo {
+    width: 177px;
+    float: none;
+    margin-top: 30px;
+    margin-left: 30px;
+} */
+
+#imagen-sorteo {
+    width: 177px;
+    float: none;    
+    background: #ccc url(https://resultadosbonoloto.com/images/logo-bonoloto.png) no-repeat;
+    /* background-color: #ccc; */
+    max-height: 92px;
+    min-height: 92px;
+    margin-top: 0px;
+    
+}
+
+#imagen-sorteo h3 {
+   font-size: 18px;
+   
+   padding-top: 20px;
+   margin-bottom: -5px;
+}
+
+#imagen-sorteo p {
+   font-size: 17px;
+   text-align: center;
+}
+
+#content-left-1 {
+    float: none;
+	width: auto;
+    margin-bottom: 20px;
+    background-repeat: repeat-x;
+    height: 331px; /* 191 */
+    border-right: 1px solid #ccc;
+    -webkit-box-shadow: 0px 5px 8px 0px rgba(50,50,50,0.62);
+    -moz-box-shadow: 0px 5px 8px 0px rgba(50,50,50,0.62);
+    box-shadow: 0px 5px 8px 0px rgba(50,50,50,0.62);
+}
+
+
+.loto-ball-g span {
+    display: block;
+    line-height: 46px;
+    text-align: center;
+    font-family: impact;
+    font-size: 20px;
+    color: #fff;
+}
+
+#ganadores-ball {
+    margin-top: 20px;
+	margin-left: 5px;
+    height: 110px;
+}
+
+#ganadores-ball p {
+ margin-top: 20px;
+	margin-left: -15px;
+	height: 110px;	
+}
+
+div {
+    display: block;
+}
+    #ganadores-ball>ul.loto-ballgs {
+    margin: 0px;
+    padding: 0px;
+    margin: 0px 5px 0px;
+    height: 50px;
+}    
+#ganadores-ball>ul.loto-ballgs>li {
+    margin: 0px;
+    padding: 0px;
+    line-height: 70px;
+    display: inline;
+    float: left;
+    position: relative;
+    width: 45px;
+    height: 50px;
+    background: url(https://resultadosbonoloto.com/images/s-ball.png) no-repeat;
+}
+#ganadores-ball>ul.loto-ballgs {
+    margin: 0px;
+    padding: 0px;
+    margin: 0px 5px 0px;
+    height: 50px;
+}
+user agent stylesheet
+ul, menu, dir {
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+}
+.loto-ball-g span {
+    display: block;
+    line-height: 46px;
+    text-align: center;
+    font-family: impact;
+    font-size: 20px;
+    color: #fff;
+}
+}

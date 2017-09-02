@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="node_modules/mfb/src/mfb.css" rel="stylesheet">
+    </head>
+    <body>
+            <ul class="{{placement-class}} {{effect-class}}" {{hover/click-to-open}} {{menu-state}}>
+                <li class="mfb-component__wrap">
+                  <!-- the main menu button -->
+                  <a data-mfb-label="{{the label text of the main button}}" class="mfb-component__button--main">
+                    <!-- the main button icon visibile by default -->
+                    <i class="mfb-component__main-icon--resting {{icon-class}}"></i>
+                    <!-- the main button icon visibile when the user is hovering/interacting with the menu -->
+                    <i class="mfb-component__main-icon--active {{active-icon-class}}"></i>
+                  </a>
+                  <ul class="mfb-component__list">
+                    <!-- a child button, repeat as many times as needed -->
+                    <li>
+                      <a href="link.html" data-mfb-label="{{the label text of the a child button}}" class="mfb-component__button--child">
+                        <i class="mfb-component__child-icon {{icon-class}}"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+    </body>
+</html>

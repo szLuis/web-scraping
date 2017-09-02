@@ -1,0 +1,93 @@
+body {margin: 0px; top: 0px; left: 0px;}
+div#result-image {
+    top: 0px; 
+	left: 0px; 
+	margin: 0px; 
+	width: 249px;
+	height: 83px;
+}
+div.day {
+	color: #ffffff;
+    font-family: Arial;
+    font-size: 12px;
+    font-weight: normal;
+    position: absolute; 
+    width: 59px;
+    height: 20px;
+    left: 11px;
+} 
+div#day1 { top: 42px; } 
+div#day2 { top: 88px; } 
+div#day3 { top: 133px; } 
+div#day4 { top: 177px; } 
+div#day5 { top: 222px; } 
+div#day6 { top: 268px; } 
+
+div.ddmon {
+	color: #ffffff;
+    font-family: Arial;
+    font-size: 14px;
+    font-weight: bold;
+    position: absolute; 
+    width: 59px;
+    height: 20px;
+    left: 11px;
+	}
+div#ddmon1 { top:  55px; } 
+div#ddmon2 { top: 101px; } 
+div#ddmon3 { top: 146px; } 
+div#ddmon4 { top: 190px; } 
+div#ddmon5 { top: 235px; } 
+div#ddmon6 { top: 280px; } 
+
+div.bolo {
+	color: #603c8e;
+    font-family: Arial;
+    font-size: 14px;
+    font-weight: bold;
+    position: absolute; 
+    width: 20px;
+    height: 20px;
+	}
+
+div#bolo11 { top: 48px; left: 91px; }
+div#bolo12 { top: 48px; left: 122px; }
+div#bolo13 { top: 48px; left: 153px; }
+div#bolo14 { top: 48px; left: 184px; }
+div#bolo15 { top: 48px; left: 215px; }
+div#bolo16 { top: 48px; left: 246px; }
+
+div#bolo21 { top: 94px; left: 91px; }
+div#bolo22 { top: 94px; left: 122px; }
+div#bolo23 { top: 94px; left: 153px; }
+div#bolo24 { top: 94px; left: 184px; }
+div#bolo25 { top: 94px; left: 215px; }
+div#bolo26 { top: 94px; left: 246px; }
+
+div#bolo31 { top: 139px; left: 91px; }
+div#bolo32 { top: 139px; left: 122px; }
+div#bolo33 { top: 139px; left: 153px; }
+div#bolo34 { top: 139px; left: 184px; }
+div#bolo35 { top: 139px; left: 215px; }
+div#bolo36 { top: 139px; left: 246px; }
+
+div#bolo41 { top: 184px; left: 91px; }
+div#bolo42 { top: 184px; left: 122px; }
+div#bolo43 { top: 184px; left: 153px; }
+div#bolo44 { top: 184px; left: 184px; }
+div#bolo45 { top: 184px; left: 215px; }
+div#bolo46 { top: 184px; left: 246px; }
+
+div#bolo51 { top: 229px; left: 91px; }
+div#bolo52 { top: 229px; left: 122px; }
+div#bolo53 { top: 229px; left: 153px; }
+div#bolo54 { top: 229px; left: 184px; }
+div#bolo55 { top: 229px; left: 215px; }
+div#bolo56 { top: 229px; left: 246px; }
+
+div#bolo61 { top: 274px; left: 91px; }
+div#bolo62 { top: 274px; left: 122px; }
+div#bolo63 { top: 274px; left: 153px; }
+div#bolo64 { top: 274px; left: 184px; }
+div#bolo65 { top: 274px; left: 215px; }
+div#bolo66 { top: 274px; left: 246px; }

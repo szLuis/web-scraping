@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <link href="../css/main.css" rel="stylesheet"> -->
+        <script src="../jquery/jquery.min.3.js"></script>
+        <style>
+            
+            .site-logo,.site-navbar,.site-trigger {
+                display: inline-block
+            }
+
+            .site-navbar-left {
+                margin-left: 1rem
+            }
+
+            .site-navbar-right,.site-trigger {
+                margin-left: auto
+            }
+
+            .site-nav-trigger {
+                position: relative;
+                display: block;
+                width: 24px;
+                height: 28px;
+                overflow: hidden;
+                white-space: nowrap;
+                color: transparent;
+                z-index: 3
+            }
+
+            .site-nav-trigger span {
+                position: absolute;
+                top: 50%;
+                right: 0;
+                -webkit-transition: background 0.3s 0.3s;
+                transition: background 0.3s 0.3s;
+                display: inline-block;
+                height: 3px;
+                width: 24px;
+                background: #000
+            }
+
+            .site-nav-trigger span:before,.site-nav-trigger span:after {
+                content: '';
+                height: 3px;
+                width: 24px;
+                background: #000;
+                position: absolute;
+                -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+                right: 0;
+                -webkit-transition: -webkit-transform 0.3s 0.3s;
+                transition: -webkit-transform 0.3s 0.3s;
+                transition: transform 0.3s 0.3s;
+                transition: transform 0.3s 0.3s, -webkit-transform 0.3s 0.3s
+            }
+
+            .site-nav-trigger span:before {
+                top: -6px
+            }
+
+            .site-nav-trigger span:after {
+                top: 6px
+            }
+
+            .navbar-fixed-top {
+                position: fixed;
+                top: 0;
+                width: 100%
+            }
+
+
+            @media (min-width: 64rem) {
+                .site-navbar .menu-item-has-children:after {
+                    content:"";
+                    border: solid black;
+                    border-width: 0 2px 2px 0;
+                    display: inline-block;
+                    padding: 3px;
+                    position: absolute;
+                    right: 0.75rem;
+                    top: 48%;
+                    -webkit-transform: translateY(-48%) rotate(45deg);
+                    transform: translateY(-48%) rotate(45deg)
+                }
+            }
+
+            @media (min-width: 64rem) {
+                .site-navbar .sub-menu {
+                    background:#fff;
+                    border: 1px solid #bbb;
+                    padding: 0;
+                    position: absolute;
+                    top: 100%;
+                    left: 0.5em;
+                    display: none;
+                    z-index: 1000
+                }
+
+                .site-navbar .sub-menu ul {
+                    left: 100%;
+                    right: auto;
+                    top: 0
+                }
+
+                .site-navbar .sub-menu li {
+                    display: inline-block;
+                    width: 14rem
+                }
+
+                .site-navbar .sub-menu li:hover {
+                    background-color: lightgrey
+                }
+
+                .site-navbar .sub-menu li a {
+                    width: 100%;
+                    color: black
+                }
+
+                .site-navbar .menu-item-has-children:hover>.sub-menu {
+                    display: block
+                }
+
+                .site-navbar.site-navbar-right .sub-menu {
+                    right: 0.5rem;
+                    left: auto
+                }
+
+                .site-navbar.site-navbar-right .sub-menu ul {
+                    right: 100%
+                }
+            }
+
+
+            .site-overlay {
+                display: none
+            }
+
+            @media (min-width: 64rem) {
+                .site-header {
+                    background-color: #ffffff;
+                    margin-bottom:0rem;
+                }
+
+                .site-navbar {
+                    display: block
+                }
+
+                .site-navbar ul li a {
+                    display: inline-block
+                }
+
+                .site-trigger {
+                    display: none
+                }
+            }
+
+            @media (max-width: 64rem) {
+                .site-navbar {
+                    position:fixed;
+                    display: -webkit-box;
+                    display: -ms-flexbox;
+                    display: flex;
+                    top: 0;
+                    right: 0;
+                    height: 100%;
+                    width: 300px;
+                    -webkit-transform: translateX(300px);
+                    transform: translateX(300px);
+                    -webkit-transition: 300ms ease all;
+                    transition: 300ms ease all;
+                    background: white;
+                    z-index: 1000;
+                    border-left: 1px solid #eee;
+                    opacity: 1
+                }
+
+                .site-navbar ul {
+                    width: 100%
+                }
+
+                .site-navbar ul li {
+                    width: 100%;
+                    border-bottom: 1px solid #eee
+                }
+
+                .site-navbar ul li a[href="#"] {
+                    font-weight: bold;
+                    color: black;
+                    cursor: default;
+                    padding: 0.75rem
+                }
+
+                .site-navbar.active {
+                    -webkit-transform: translateX(0);
+                    transform: translateX(0)
+                }
+
+                .site-overlay.active {
+                    opacity: 0.75;
+                    position: fixed;
+                    height: 100%;
+                    width: 100%;
+                    top: 0;
+                    background: white;
+                    display: block
+                }
+            }
+
+
+
+            @media (max-width: 64rem) {
+                .site-header.with-header .site-logo {
+                    width:100%;
+                    text-align: center
+                }
+
+                .site-trigger {
+                    margin: 0 auto !important;
+                    position: fixed;
+                    bottom: 3rem;
+                    right: 1rem;
+                    z-index: 1000000000;
+                    /* width: 32px;
+                    height: 32px; */
+                    border: 0;
+                    border-radius: 50%;
+                    opacity: 1;
+                    padding: 1rem;
+                    -webkit-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.5);
+                    box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.5);
+                    background-color: white
+                }
+
+                .site-header.with-header .site-trigger a {
+                    color: black
+                }
+
+                .site-header.with-header .site-trigger .site-nav-trigger {
+                    margin: 0 auto
+                }
+
+                .site-header.with-header .site-trigger span {
+                    background-color: #252525;
+                    height: 5px
+                }
+
+                .site-header.with-header .site-trigger span:before,.site-header.with-header .site-trigger span:after {
+                    background-color: #252525;
+                    height: 5px
+                }
+
+                .site-header.with-header .site-trigger span:before {
+                    top: -8px
+                }
+
+                .site-header.with-header .site-trigger span:after {
+                    top: 8px
+                }
+            }
+
+                        
+            a {
+                color: #2196f3;
+            }
+                        
+                        
+            .site-header a {
+                color: ;
+            }
+
+            .site-nav-trigger span:before, .site-nav-trigger span:after, .site-nav-trigger span {
+                background-color: ;
+            }
+
+            .site-navbar .menu-item-has-children:after {
+                border-color: ;
+            }
+    
+        </style>
+    </head>
+    <body>
+        <header id="masthead" class="site-header" role="banner">
+                
+            <div class="fosforit-logo">
+                <a href="http://localhost/wordpress/" title="Resultados Bonoloto" rel="home"><img src="http://localhost/wordpress/images/logo-resultados-bonoloto.png" alt="Resultados Bonoloto">
+                </a>
+            </div>
+                    
+            <nav id="site-navigation" class="fosforit-nav" role="navigation">
+                    
+                <div class="menu-menu-1-container">
+                        <ul id="menu-top" class="nav-menu">
+                        <li id="menu-item-333" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-333"><a href="http://localhost/wordpress/hoy/">RESULTADOS HOY</a></li>
+                        <li id="menu-item-334" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-334"><a href="http://localhost/wordpress/ayer/">RESULTADOS AYER</a></li>
+                        <li id="menu-item-342" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-342"><a href="http://localhost/wordpress/semanal/">RESULTADOS SEMANAL</a></li>
+                        <li id="menu-item-343" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-343"><a href="http://localhost/wordpress/anteriores/">RESULTADOS ANTERIORES</a></li>
+                        <li id="menu-item-344" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-344"><a href="http://localhost/wordpress/comprobar/">COMPROBAR BOLETO</a></li>
+                    </ul>
+                    <select id="selectnav1" class="selectnav"><option value="" class="selectnav-option">« Menu »</option><option value="http://localhost/wordpress/hoy/">RESULTADOS HOY</option><option value="http://localhost/wordpress/ayer/">RESULTADOS AYER</option><option value="http://localhost/wordpress/semanal/">RESULTADOS SEMANAL</option><option value="http://localhost/wordpress/anteriores/">RESULTADOS ANTERIORES</option><option value="http://localhost/wordpress/comprobar/">COMPROBAR BOLETO</option></select></div>		
+            </nav><!-- #site-navigation -->
+                
+            <div class="clear"></div>
+        </header>
+        <header class="site-header with-header">
+            <div class="container">
+                
+                <nav class="site-navbar site-navbar-right">
+                       
+                    <ul>
+                            <li  class="menu-item menu-item-type-post_type menu-item-object-page"><a href="hey.html">Otro</a> </li>
+                            <li class="menu-item">Otro</li>
+                            <li class="menu-item">Otro</li>
+                        <li id="menu-item-124" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-124"><a href="https://avesexoticas.org/imagenes-de-pajaros/">Imágenes de pájaros</a></li>
+                    <li id="menu-item-155" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-155"><a href="https://avesexoticas.org/agapornis/">Agapornis</a>
+
+                    <ul  class="sub-menu">
+                        <li>Otro</li>
+                        <li id="menu-item-675" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-675"><a href="https://avesexoticas.org/agapornis/agapornis-roseicollis/">Agapornis Roseicollis</a></li>
+                        <li id="menu-item-676" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-676"><a href="https://avesexoticas.org/agapornis/agarponis-personata/">Agarponis personata</a></li>
+                    </ul>
+                    </li>
+                    <li id="menu-item-44" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-44"><a href="https://avesexoticas.org/periquitos/">Periquitos</a></li>
+                    <li id="menu-item-70" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-70"><a href="https://avesexoticas.org/palomas/">Palomas</a>
+                    <ul  class="sub-menu">
+                        <li id="menu-item-677" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-677"><a href="https://avesexoticas.org/palomas/buchon-balear/">Buchón balear</a></li>
+                        <li id="menu-item-678" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-678"><a href="https://avesexoticas.org/palomas/buchon-colillano/">Buchón colillano</a></li>
+                        <li id="menu-item-679" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-679"><a href="https://avesexoticas.org/palomas/buchon-granadino/">Buchón granadino</a></li>
+                        <li id="menu-item-682" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-682"><a href="https://avesexoticas.org/palomas/figureta/">Figureta</a></li>
+                        <li id="menu-item-680" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-680"><a href="https://avesexoticas.org/palomas/buchon-veleno/">Buchón veleño</a></li>
+                        <li id="menu-item-681" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-681"><a href="https://avesexoticas.org/palomas/buchon-gaditano/">Buchón Gaditano</a></li>
+                    </ul>
+                    </li>
+                    </ul>			
+                </nav>
+                <div class="site-trigger">
+                    <a class="site-nav-trigger">
+                        <span></span>
+                    </a>
+                </div>
+    
+            </div>
+        </header>
+
+        <div class="site-overlay"></div>
+    </body>
+    <script> 
+    $(document).ready(function() {
+
+        moveNavigation();
+
+        $(window).on('resize', function() {
+            (!window.requestAnimationFrame) ? setTimeout(moveNavigation, 300): window.requestAnimationFrame(moveNavigation);
+        });
+
+        $('.site-trigger, .site-overlay').on('click', function(event) {
+            event.preventDefault();
+            $('.site-navbar, .site-overlay').toggleClass('active');
+
+        });
+
+        function moveNavigation() {
+            var navbar = $('.site-navbar');
+            var screenSize = checkWindowWidth();
+            if (screenSize) {
+
+                navbar.detach();
+                navbar.insertBefore('.site-trigger');
+                $('.site-navbar, .site-overlay').removeClass('active');
+            } else {
+
+                navbar.detach();
+                navbar.insertAfter('.site-overlay');
+                $('.site-navbar, .site-overlay').removeClass('active');
+            }
+        }
+
+        function checkWindowWidth() {
+            var mq = $(window).width();
+            return (mq < 1024) ? false : true;
+        }
+
+        //SMOOTH SCROLL
+
+        $('a[href*="#"]').not('[href="#"]').not('[href="#0"]').click(function(event) {
+
+            if (
+                location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') &&
+                location.hostname == this.hostname
+                ) {
+
+                    var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+
+                if (target.length) {
+
+                    event.preventDefault();
+                    $('html, body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000, function() {
+
+                        var $target = $(target);
+                        $target.focus();
+                        if ($target.is(":focus")) {
+                            return false;
+                        } else {
+                            $target.attr('tabindex', '-1');
+                            $target.focus();
+                        };
+                    });
+                }
+            }
+        });
+
+    });   
+    </script>
+</html>
+
+
+<style>
+
+</style>
